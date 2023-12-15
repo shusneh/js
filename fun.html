@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+</head>
+<body>
+    <button id="orange" style="background-color: orange;border-radius: 10px;">ORANGE</button>
+    <button id="green" style="background-color: rgb(22, 203, 94);border-radius: 10px">GREEN</button>
+</body>
+<script>
+    function handleclick(color) {
+        return function(){
+            document.body.style.backgroundColor=color
+        }
+    }
+
+    // document.getElementById('orange').addEventListener('click',function(){
+    //     document.body.style.backgroundColor='orange'
+    //     document.getElementById('button').style.backgroundColor='blue'
+
+    // })
+    // document.getElementById('orange').addEventListener('click',function(){
+    //     document.body.style.backgroundColor='orange'
+    //     document.getElementById('orange').style.backgroundColor='blue'
+    //     document.getElementById('green').style.backgroundColor='rgb(22, 203, 94)'
+    // })
+    // document.getElementById('green').addEventListener('click',function(){
+    //     document.body.style.backgroundColor='rgb(22, 203, 94)'
+    //     document.getElementById('green').style.backgroundColor='blue'
+    //     document.getElementById('orange').style.backgroundColor='orange'
+    // })
+
+    document.getElementById('orange').onclick=handleclick('orange')
+    document.getElementById('green').onclick=handleclick('green')
+
+</script>
+</html>
